@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color1: #e12d53;
+  --color2: #17468a;
+  --color3: #4c8dca;
+  --color4: #78e5eb;
+  --black: #4b4b4c;
+}
+html {
+  font-size: 62.5%;
+  font-family: Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.interweave {
+  font-size: 1.6rem;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .hideOnExtraSmall {
+    display: none !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .hideOnSmall {
+    display: none !important;
+  }
+}

@@ -1,0 +1,32 @@
+import React from 'react';
+import { Switch, HashRouter, Route, Redirect } from 'react-router-dom';
+
+import NotFoundPage from '../components/NotFoundPage';
+import MyStoryPage from '../components/MyStoryPage';
+import LoginPage from '../components/LoginPage';
+import EditStoryPage from '../components/EditStoryPage';
+import AddStoryPage from '../components/AddStoryPage';
+import Header from '../components/Header';
+import ReadStoryPage from '../components/ReadStoryPage';
+import PrivateRoute from './PrivateRoute';
+import AnonymousRoute from './AnonymousRoute';
+
+
+
+export const AppRouter = () => (
+  <HashRouter hashType="hashbang">
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/"  render={() => <Redirect to="/myStory" />} />
+        <AnonymousRoute path="/login" component={LoginPage} />
+        <Route path="/read/:id" component={ReadStoryPage} />
+        <PrivateRoute path="/create" component={AddStoryPage} />
+        <PrivateRoute path="/edit/:id" component={EditStoryPage} />
+        <PrivateRoute path="/myStory" component={MyStoryPage} />
+        <Route component={NotFoundPage} />
+        
+      </Switch>
+    </div>
+  </HashRouter>
+);
